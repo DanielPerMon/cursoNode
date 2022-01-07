@@ -1,14 +1,11 @@
 const {crearArchivo} =require('./librerias/multiplicar');
-const argv = require('yargs').argv;
+const argv = require('./config/yargs');
+const colors = require('colors');
 
 console.clear();
 
-console.log(process.argv);
-console.log(argv);
-console.log('base: yargs', argv.base);
+//console.log(argv);
 
-//const base = 3;
-
-/* crearArchivo(base)
-.then(nombreArchivo => console.log(nombreArchivo,'creado'))
-.catch(err => console.log(err));  */
+crearArchivo(argv.b,argv.l,argv.h)
+.then(nombreArchivo => console.log(nombreArchivo.rainbow,'creado'))
+.catch(err => console.log(err));
