@@ -53,21 +53,6 @@ const login = async (req, res = response) => {
 const googleSignin = async (req, res = response) => {
     const { id_token } = req.body;
 
-    /* try {
-
-        const googleUser = await googleVerify(id_token);
-        console.log(googleUser);
-        res.json({
-            msg:"Todo bien",
-            id_token
-        })
-        
-    } catch (err) {
-        console.log(err);
-    } */
-
-    
-
     try {
         const { nombre, img, correo } = await googleVerify(id_token);
 
@@ -79,8 +64,7 @@ const googleSignin = async (req, res = response) => {
                 correo,
                 password: ':p',
                 img,
-                google: true,
-                rol: DefaultTransporter
+                google: true
             };
 
             usuario = new Usuario(data);
