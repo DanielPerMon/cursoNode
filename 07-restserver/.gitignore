@@ -1,2 +1,4 @@
 node_modules/
 tempCodeRunnerFile.js
+uploads/productos/**.*
+uploads/usuarios/**.*
